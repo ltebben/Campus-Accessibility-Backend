@@ -3,7 +3,9 @@ var Schema = mongoose.Schema;
 
 var commentSchema = new Schema({
     text: String,
-    user: Number //Member ID?
+    user: Number, //Member ID?
+    longitude: Number,
+    latitude: Number
 });
 
-module.exports = mongoose.mode('Comment', commentSchema);
+module.exports = mongoose.model('Comment', commentSchema);
