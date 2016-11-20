@@ -11,7 +11,10 @@ exports.getAll = function(req, res) {
         if (err) {
             res.send(err);
         }
-        res.json(comments);
+        res.render('comment', {
+            title: "comments",
+            comments: comments,
+        });
     });
 };
 

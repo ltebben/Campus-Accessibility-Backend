@@ -1,0 +1,18 @@
+extend layout
+
+block content
+    table(class="table")
+        tr
+            th Title
+            th Description
+            th Longitude
+            th Latitude
+
+        tbody
+            each comment in comments
+                tr
+                    td=comment.title
+                    td=comment.description
+                    td=comment.longitude
+                    td=comment.latitude
+
