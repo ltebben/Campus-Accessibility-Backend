@@ -17,7 +17,7 @@ exports.getAll = function(req, res) {
 
 exports.post = function(req, res) {
     var comment = Comment();
-    requirements = ['longitude', 'latitude', 'user', 'title', 'description'];
+    requirements = ['longitude', 'latitude', 'title', 'description'];
 
     for (var i = 0; i < requirements.length; i++) {
         req.checkBody(requirements[i], 'Missing body').notEmpty();
@@ -31,7 +31,6 @@ exports.post = function(req, res) {
 
     comment.longitude = req.body.longitude;
     comment.latitude = req.body.latitude;
-    comment.user = req.body.user;
     comment.title = req.body.title;
     comment.description = req.body.description;
     
