@@ -4,8 +4,17 @@
 var Comment = require('../models/comment');
 var util = require('util');
 
-
 exports.getAll = function(req, res) {
+    //code goes here
+    Comment.find(function (err, comments) {
+        if (err) {
+            res.send(err);
+        }
+        res.json(comments);
+    });
+};
+
+exports.renderAll = function(req, res) {
     //code goes here
     Comment.find(function (err, comments) {
         if (err) {
